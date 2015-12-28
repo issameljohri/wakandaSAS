@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html class="no-js" ng-app="productManagement">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title>Product Management App</title>
+
+        <!-- vendor css -->
+        <link rel="stylesheet" href="/bower_components/bootstrap-css/css/bootstrap.css ">
+        <link rel="stylesheet" href="/app/styles/theme7.css "> 
+        <link rel="stylesheet" href="/bower_components/bootstrap-css/css/toastr.css ">
+
+        <!-- app css -->
+        <link href="./styles/style.css" rel="stylesheet">
+
+    </head>
+    
+    <body>
+        <nav class="navbar navbar-inverse">
+        	<div class="container">
+        		<a class="navbar-brand">Carrefour Market</a>
+        		
+        		<div class="navbar-header">
+        			<button type="button"
+        			        class="navbar-toggle"
+        			        data-toggle="collapse"
+        			        data-target=".navbar-collapse">
+        				<span class="sr-only">Toggle navigation</span>
+        				<span class="icon-bar"></span>
+        				<span class="icon-bar"></span>
+        				<span class="icon-bar"></span>
+        			</button>
+        		</div>
+        		
+        		<div class="navbar-collapse collapse">
+        			<ul class="nav navbar-nav">
+        	             	<li id="ProductStore"><a ui-sref="productList">Product Store</a></li>
+        	            	<li id="MyPanel">     <a ui-sref="panel">My Panel</a>           </li>
+        	            	<li id="newProduct">  <a ui-sref="newProduct">New Product</a>   </li>
+        	            	
+        	            	<button ui-sref="login" class="btn btn-primary" id="logout" ng-click = "logoutFct()">Logout</button> 
+        	        </ul>
+        		</div>
+        		
+        		
+        	</div>
+        </nav>	
+        
+        
+        	
+	    <div class="container">
+            <div ui-view>  </div>
+        </div>
+        
+
+        <!-- vendor js -->
+        <script src="/bower_components/angular/jquery-2.1.4.min.js"></script>
+        <script src="/bower_components/bootstrap-css/js/bootstrap.js"></script>
+        <script src="/bower_components/angular/angular.js"></script>
+        <script src="/bower_components/angular-wakanda/angular-wakanda.min.js"></script>
+        <script src="/bower_components/angular/angular-ui-router.min.js"></script>
+        <script src="/bower_components/angular/toastr.js"></script>
+
+        <!-- app js -->
+        <script src="scripts/app.js"></script>
+        
+        <!-- controllers-->
+        <script src="scripts/controllers/MyCtrl.js" ></script>
+        <script src="scripts/controllers/ProductListCtrl.js" ></script>
+        <script src="scripts/controllers/PanelCtrl.js" ></script>
+        <script src="scripts/controllers/NewProductCtrl.js" ></script>
+        
+        
+    </body>
+</html>

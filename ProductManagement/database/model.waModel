@@ -1,0 +1,158 @@
+{
+	"toJSON": true,
+	"extraProperties": {
+		"version": "2",
+		"classes": {
+			"Product": {
+				"panelColor": "rgb(255, 78, 89)",
+				"panel": {
+					"isOpen": "true",
+					"pathVisible": true,
+					"position": {
+						"X": 710,
+						"Y": 104
+					}
+				}
+			},
+			"User": {
+				"panelColor": "rgb(141, 179, 226)",
+				"panel": {
+					"isOpen": "true",
+					"pathVisible": true,
+					"position": {
+						"X": 106,
+						"Y": 103
+					}
+				}
+			},
+			"UserPanel": {
+				"panelColor": "#548DD4",
+				"panel": {
+					"isOpen": "true",
+					"pathVisible": true,
+					"position": {
+						"X": 411,
+						"Y": 106
+					}
+				}
+			}
+		},
+		"model": {
+			"scriptMode": "manual",
+			"workspaceLeft": 0,
+			"workspaceTop": 0,
+			"relationCurve": {
+				"run": true,
+				"mode": 1
+			}
+		}
+	},
+	"dataClasses": [
+		{
+			"name": "Product",
+			"className": "Product",
+			"collectionName": "ProductCollection",
+			"scope": "public",
+			"attributes": [
+				{
+					"name": "ID",
+					"kind": "storage",
+					"scope": "public",
+					"unique": true,
+					"autosequence": true,
+					"type": "long",
+					"primKey": true
+				},
+				{
+					"name": "productName",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "description",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "price",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "imageUrl",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "category",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				}
+			]
+		},
+		{
+			"name": "User",
+			"className": "User",
+			"collectionName": "UserCollection",
+			"scope": "public",
+			"attributes": [
+				{
+					"name": "ID",
+					"kind": "storage",
+					"scope": "public",
+					"unique": true,
+					"autosequence": true,
+					"type": "long",
+					"primKey": true
+				},
+				{
+					"name": "login",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "password",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				}
+			]
+		},
+		{
+			"name": "UserPanel",
+			"className": "UserPanel",
+			"collectionName": "UserPanelCollection",
+			"scope": "public",
+			"attributes": [
+				{
+					"name": "ID",
+					"kind": "storage",
+					"scope": "public",
+					"unique": true,
+					"autosequence": true,
+					"type": "long",
+					"primKey": true
+				},
+				{
+					"name": "userID",
+					"kind": "storage",
+					"scope": "public",
+					"type": "long"
+				},
+				{
+					"name": "productID",
+					"kind": "storage",
+					"scope": "public",
+					"type": "long"
+				}
+			]
+		}
+	],
+	"type": []
+}

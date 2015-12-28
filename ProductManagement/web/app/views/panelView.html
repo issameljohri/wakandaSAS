@@ -1,0 +1,31 @@
+
+<div class="well well-lg"></div>
+
+<div class="panel-group" ng-repeat = "product in prods">
+	
+	<div class="panel panel-default">
+		
+     	<div class="panel-heading">
+		    <h2>{{product.productName}}</h2>
+	    </div>
+
+	    <div class="panel-body">
+		    <img ng-src="{{product.imageUrl}}" alt="{{product.productName}}" class="img-thumbnail" width="304" height="236">
+			<div class="info">
+				<div><strong>ProductNumber : </strong>{{product.ID}}</div> 
+		        <div><strong>Description : </strong>{{product.description}}</div> 
+		        <div><strong>Price : </strong>{{product.price | currency}}</div> 
+		        <div><strong>Category : </strong>{{product.category}}</div>
+		        
+		    </div>
+	    </div>
+	    
+	    <div class="panel-footer">
+	    	Quantity : <input type="number" name="quantity" id="quantity"  min="1" />
+	    	
+	    </div>
+	
+	</div>
+	
+</div>
+

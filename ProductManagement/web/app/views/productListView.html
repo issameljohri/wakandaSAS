@@ -1,0 +1,46 @@
+<div class="container">
+	
+    <div class="well well-lg">
+ 	    <select ng-model="query.category" class="form-control">
+ 		        <option selected value="">ALL</option>
+ 		        <option value="IT">IT</option>
+               	<option value="Sport">Sport</option>
+                <option value="Education">Education</option>
+                <option value="Clothes">Clothes</option>
+               	<option value="Others">Others</option>
+     	</select>
+    </div> <hr><hr>
+
+
+
+
+    <div class="panel-group" ng-repeat = "product in products | orderBy : sortorder | filter: query">
+	
+	    <div class="panel panel-default">
+	    	
+     	     <div class="panel-heading">
+		     	<h2>{{product.productName}}</h2>
+	         </div>
+
+	         <div class="panel-body" >
+		          <img ng-src="{{product.imageUrl}}" alt="{{product.productName}}" class="img-thumbnail" width="300" height="200">
+			      <div class="info">
+			        <div><strong>ProductNumber : </strong><em>{{product.ID}}</em></div> 
+		            <div><strong>Description : </strong><em>{{product.description}}</em></div> 
+		            <div><strong>Price : </strong><em>{{product.price | currency}}</em></div> 
+		            <div><strong>Category : </strong><em>{{product.category}}</em></div>
+		          </div>
+	         </div>
+	    
+	         <div class="panel-footer">
+	             <button class="btn btn-default" ng-click = "addToPanel(product)">Add to your Panel</button>
+	         </div>
+	
+    	</div>
+	
+    </div>
+
+
+
+</div>
+

@@ -1,0 +1,100 @@
+<div class="container">
+	
+<section id="NewProduct" class="col-md-6">
+	
+                <div class="panel"> 
+                   
+                   <div class="panal-heading">
+                   	  <h2>Create a New Product</h2>
+                   </div>
+                   
+                   <div class="panel-body">
+                       <form name="newProductForm" novalidate> 
+                            <div class="form-group" ng-class ="{'has-error':newProductForm.productName.$invalid &&
+                                                                 newProductForm.productName.$dirty}">
+                                 <label for="productName" >Product Name * </label>
+                                 <input type="text" 
+                                        class="form-control" 
+                                        id="productName"
+                                        name="productName"
+                                        ng-model="product.name" 
+                                        ng-minlength = "4"
+                                        ng-maxlength = "30" required />
+                                        
+                            </div> 
+                            <div class="help-block has-error">
+                            	<span ng-show = "newProductForm.productName.$error.required && newProductForm.productName.$dirty">
+                            		Product Name is required!
+                            	</span>
+                            	<span ng-show = "newProductForm.productName.$error.minlength">
+                            		Product Name must be at least 4 characters in length!
+                            	</span>
+                            	<span ng-show = "newProductForm.productName.$error.maxlength">
+                            		Product Name cannot exceed 30 characters in length!
+                            	</span>
+                            </div>
+                            
+                            
+                            <div class="form-group" >
+                                 <label for="pwd" >Description * </label>
+                                 <textarea cols="40" rows="col-md-6"
+                                        class="form-control"
+                                        id="desc"
+                                        name="desc"
+                                        placeholder="Product's Description"
+                                        ng-model="product.description">
+                                 </textarea>
+                                       
+                            </div> 
+                            
+
+                            <div class="form-group" ng-class ="{'has-error':newProductForm.productPrice.$invalid &&
+                                                                             newProductForm.productPrice.$dirty }" required>
+                                 <label for="productPrice" >Price * </label>
+                                 <input type="text" 
+                                        class="form-control" 
+                                        id="productPrice"
+                                        name="productPrice"
+                                        placeholder="Product's Price"
+                                        ng-model="product.price" required>
+                                        
+                            </div>
+                             
+                   
+                            
+                            <div class="form-group" >
+                                 <label for="productImage">Image: </label>
+                                 <input type="url" name="productImage"
+                                        class="form-control" 
+                                        id="productImage"
+                                        placeholder="Url of Image"
+                                        ng-model="product.imageUrl" />
+                                        
+                            </div>
+                             
+                            <div class="form-group" ng-class ="{'has-error':newProductForm.productPrice.$invalid && 
+                                                                            newProductForm.productPrice.$dirty}">
+                                 <label for="productCategory">Category: </label>
+                                 <select   name="productCategory" id="productCategory" ng-model="product.category"  required>
+                                 	<option value="IT">IT</option>
+                                 	<option value="Sport">Sport</option>
+                                 	<option value="Education">Education</option>
+                                 	<option value="Clothes">Clothes</option>
+                                 	<option value="Others">Others</option>
+                                 </select>
+                                
+                            </div>  <br>
+                            
+                            <button   class="btn btn-primary"
+                                                   ng-click = "saveProduct(product)"  
+                                                   ng-disabled="newProductForm.productName.$dirty && newProductForm.productName.$invalid ||
+                                                                newProductForm.productPrice.$invalid || 
+                                                                newProductForm.productCategory.$invalid ">Save </button>
+                            <button type="button" ng-click = "cancelEdit()" class="btn btn-default" >Cancel</button>
+                            
+                       </form>
+                    </div>
+                    
+                </div>    
+</section>
+</div>
